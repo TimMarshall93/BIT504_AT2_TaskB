@@ -6,8 +6,8 @@ import javax.swing.JFrame;
 public class Pong extends JFrame 
 {
 	private static final String windowTitle = "Pong";
-	private static final Integer windowWidth = 800;
-	private static final Integer windowHeight = 600;
+	private static final int windowWidth = 800;
+	private static final int windowHeight = 600;
 
 	public Pong() 
 	{
