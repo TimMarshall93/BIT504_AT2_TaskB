@@ -43,7 +43,7 @@ public class Sprite
         this.yPosition = yPosition;
     }
     
-    public void setYPosition(int newY, int panelHeight) 
+    public void setyPosition(int newY, int panelHeight) 
     {
         yPosition = newY;
         if (yPosition < 0)
