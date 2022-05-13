@@ -19,7 +19,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
 	Ball ball;
 	GameState gameState = GameState.Initialising;
 	Paddle paddle1, paddle2;
-	private static final int ballMovementSpeed = 2;
+	private static final int ballMovementSpeed = 5;
 	private final static int pointsToWin = 3;
 	int player1Score = 0, player2Score = 0;
 	String winner = "WIN!";
@@ -52,20 +52,20 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
 	{
 		if(event.getKeyCode() == KeyEvent.VK_W) 
 		{
-            paddle1.setyVelocity(-1);
+            paddle1.setyVelocity(-5);
         } 
 		else if(event.getKeyCode() == KeyEvent.VK_S) 
 		{
-            paddle1.setyVelocity(1);
+            paddle1.setyVelocity(5);
 		}
 		
 		if(event.getKeyCode() == KeyEvent.VK_UP) 
 		{
-            paddle2.setyVelocity(-1);
+            paddle2.setyVelocity(-5);
         } 
 		else if(event.getKeyCode() == KeyEvent.VK_DOWN) 
 		{
-            paddle2.setyVelocity(1);
+            paddle2.setyVelocity(5);
 		}
 	}
 
