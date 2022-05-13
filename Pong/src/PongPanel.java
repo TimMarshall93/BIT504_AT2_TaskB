@@ -22,12 +22,15 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
 	private static final int ballMovementSpeed = 2;
 	private final static int pointsToWin = 3;
 	int player1Score = 0, player2Score = 0;
+	String winner = "WIN!";
 	Player gameWinner;
 	private final static int scoreTextX = 100;
     private final static int scoreTextY = 100;
     private final static int scoreFontSize = 50;
     private final static String scoreFontFamily = "Serif";
-	
+    private final static int winnerTextX = 200;
+    private final static int winnerTextY = 200;
+    
 	public PongPanel()
 	{
 		setBackground(backgroundColor);
@@ -97,6 +100,7 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
 	    	paintSprite(g, paddle1);
 	    	paintSprite(g, paddle2);
 	    	paintScores(g);
+	    	displayWin(g);
 	    }
 	}
 	
@@ -233,5 +237,25 @@ public class PongPanel extends JPanel implements ActionListener, KeyListener
          g.setFont(scoreFont);
          g.drawString(leftScore, scoreTextX, scoreTextY);
          g.drawString(rightScore, getWidth()-scoreTextX, scoreTextY);
+	}
+	
+	private void displayWin (Graphics g)
+	{
+		if (gameWinner != null)
+		{
+        Font winnerFont = new Font(scoreFontFamily, Font.BOLD, scoreFontSize);
+        g.setFont(winnerFont);
+        int xPosition = getWidth() / 2;
+        if (gameWinner == Player.One)
+        {
+        	xPosition -= winnerTextX;
+        }
+        
+        else if (gameWinner == Player.Two)
+        {
+        	xPosition += winnerTextX;
+        }
+        g.drawString(winner, xPosition, winnerTextY);
+		}
 	}
 }
