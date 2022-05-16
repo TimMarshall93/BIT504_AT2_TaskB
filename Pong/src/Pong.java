@@ -28,7 +28,5 @@ public class Pong extends JFrame
 		        new Pong();
 	        }
 		});
-
 	}
-
 }
